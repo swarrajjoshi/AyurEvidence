@@ -1,8 +1,47 @@
 # AyurEvidence
 
+Windows users: follow [START_WINDOWS.md](START_WINDOWS.md) for the exact PowerShell and Docker Desktop workflow.
+
 Working full-stack prototype for **AI-powered Ayurvedic research discovery and evidence mapping**. It connects a modern research query to terminology, demo entities, lawful user-uploaded PDFs, live PubMed metadata, evidence categories, and a traceable research map.
 
 > Research-use only. This is not a prescribing, diagnosis, or treatment system. DEMO relationships are unverified and never imply clinical effectiveness.
+
+
+
+
+
+How to run it
+1. Start Docker Desktop.
+2. Open PowerShell.
+3. Enter the Desktop project:
+Set-Location -LiteralPath "C:\Users\Swarraj\OneDrive\Desktop\SIH AyurEvidence"
+4. Start the project:
+docker compose up -d
+5. Check the services:
+docker compose ps
+All three should show Up; Neo4j should show healthy.
+6. Open:
+   - http://localhost:3000
+   - http://localhost:8000/docs
+   - http://localhost:7474
+Neo4j credentials:
+Username: neo4j
+Password: ayurevidence-demo
+Rebuild after code changes
+docker compose down
+docker compose up --build -d
+docker compose ps
+Stop the project
+docker compose down
+Do not add -v, because that would delete the Neo4j volume.
+View errors
+docker compose logs --tail=100 frontend
+docker compose logs --tail=100 backend
+docker compose logs --tail=100 neo4j
+
+
+
+
 
 ## Quick start (Docker)
 

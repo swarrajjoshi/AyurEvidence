@@ -1,0 +1,16 @@
+.git
+.github
+.next
+.vinext
+.wrangler
+.venv
+dist
+node_modules
+storage
+work
+outputs
+coverage
+*.log
+*.tsbuildinfo
+__pycache__
+*.pyc
